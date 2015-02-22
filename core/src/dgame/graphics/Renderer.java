@@ -16,7 +16,6 @@ public class Renderer {
     private int width, height;
 
     Batch batch;
-    Texture img;
     Lawn lawn;
 
     public Renderer(int width, int height) {
@@ -26,17 +25,11 @@ public class Renderer {
         heightScale = (float)height / (float)givenHeight;
 
         batch = new SpriteBatch();
-        //img = new Texture("grass_tile.png");
         lawn = new Lawn();
     }
 
-    public void DrawLawn() {
-        Gdx.gl.glClearColor(0.48f, 0.78f, 0.34f, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
-        batch.begin();
-        //lawn.Draw(batch);
-        batch.end();
+    public void DrawLawn(Batch batch) {
+        lawn.Draw(batch);
     }
 
 }
