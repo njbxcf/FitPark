@@ -12,10 +12,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class Renderer {
 
     private final int givenWidth = 1280, givenHeight = 720;
-    private float widthScale, heightScale;
+    public static float widthScale, heightScale;
     private int width, height;
 
-    Batch batch;
     Lawn lawn;
 
     public Renderer(int width, int height) {
@@ -24,8 +23,8 @@ public class Renderer {
         widthScale = (float)width / (float)givenWidth;
         heightScale = (float)height / (float)givenHeight;
 
-        batch = new SpriteBatch();
         lawn = new Lawn();
+        Gardener.Garden(lawn);
     }
 
     public void DrawLawn(Batch batch) {

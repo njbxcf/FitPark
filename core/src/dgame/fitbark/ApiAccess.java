@@ -21,7 +21,6 @@ public class ApiAccess {
             @Override
             public void handleHttpResponse(Net.HttpResponse httpResponse) {
                 Gdx.app.log("Response", httpResponse.getResultAsString());
-                //Gdx.app.exit();
             }
 
             @Override
