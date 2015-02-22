@@ -21,6 +21,10 @@ public class Renderer {
         heightScale = (float)height / (float)givenHeight;
     }
 
+    public void SetScene(Scene newScene) {
+        scene = newScene;
+    }
+
     public void Draw(Batch batch) {
         scene.Draw(batch);
     }

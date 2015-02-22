@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Entities {
 
-    ArrayList<Entity> entities;
+    public ArrayList<Entity> entities;
 
     public Entities() {
         entities = new ArrayList<Entity>();

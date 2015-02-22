@@ -9,6 +9,7 @@ public class Entity {
 
     private Texture Tex;
     private int X=0, Y=0;
+    public int cost = 0;
 
     public Entity(Texture texture) {
         Tex = texture;

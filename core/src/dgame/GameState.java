@@ -9,21 +9,20 @@ import dgame.scenes.Shop;
  */
 public class GameState {
 
-    public static Scene current;
-
-    public static Lawn lawn;
-    public static Shop shop;
-
-    public static boolean isChanged = true;
+    public static int scene = 0;
+    public static int points = 0;
+    public static boolean hasBone = false;
 
     public static void ToLawn() {
-        current = lawn;
-        isChanged = true;
+        scene = 0;
     }
 
     public static void ToShop() {
-        current = shop;
-        isChanged = true;
+        scene = 1;
+    }
+
+    public static void ToHood() {
+        scene = 2;
     }
 
 }

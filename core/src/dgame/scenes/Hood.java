@@ -7,12 +7,13 @@ import dgame.graphics.Renderer;
 /**
  * Created by jesse on 2/22/15 under the Apache 2.0 license.
  */
-public class Shop implements Scene {
+public class Hood implements Scene {
 
-    Texture bg = new Texture("shop.png");
+    Texture bg = new Texture("neighboorhood.png");
 
     @Override
     public void Draw(Batch batch) {
-        batch.draw(bg, 0, 0, 1280*Renderer.heightScale, 721*Renderer.widthScale);
+        batch.draw(bg, 0, 0, 1280* Renderer.widthScale, 721*Renderer.heightScale);
     }
+
 }
