@@ -1,4 +1,4 @@
-package dgame.graphics;
+package dgame.scenes;
 
 import com.badlogic.gdx.graphics.Texture;
 import dgame.Entity;

@@ -1,10 +1,7 @@
 package dgame.graphics;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import dgame.scenes.Scene;
 
 /**
  * Created by jesse on 2/21/15 under the Apache 2.0 license.
@@ -15,20 +12,17 @@ public class Renderer {
     public static float widthScale, heightScale;
     private int width, height;
 
-    Lawn lawn;
+    public Scene scene;
 
     public Renderer(int width, int height) {
         this.width = width;
         this.height = height;
         widthScale = (float)width / (float)givenWidth;
         heightScale = (float)height / (float)givenHeight;
-
-        lawn = new Lawn();
-        Gardener.Garden(lawn);
     }
 
-    public void DrawLawn(Batch batch) {
-        lawn.Draw(batch);
+    public void Draw(Batch batch) {
+        scene.Draw(batch);
     }
 
 }

@@ -1,15 +1,16 @@
-package dgame.graphics;
+package dgame.scenes;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import dgame.Entity;
+import dgame.graphics.Renderer;
 
 import java.util.ArrayList;
 
 /**
  * Created by jesse on 2/21/15 under the Apache 2.0 license.
  */
-public class Lawn {
+public class Lawn implements Scene {
 
     ArrayList<Plant> grass;
     Texture backdrop;
@@ -21,8 +22,9 @@ public class Lawn {
         fence = new Texture("fence.png");
     }
 
+    @Override
     public void Draw(Batch batch) {
-        batch.draw(backdrop, 0, 0, 1280*Renderer.widthScale, 720*Renderer.heightScale);
+        batch.draw(backdrop, 0, 0, 1280* Renderer.widthScale, 720*Renderer.heightScale);
 
         for(int i=0;i<1280;i+=54)
             batch.draw(fence, i*Renderer.widthScale, 510*Renderer.heightScale, 54*Renderer.widthScale, 171*Renderer.heightScale);

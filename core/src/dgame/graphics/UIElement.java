@@ -1,6 +1,7 @@
-package dgame;
+package dgame.graphics;
 
 import com.badlogic.gdx.graphics.Texture;
+import dgame.Entity;
 
 /**
  * Created by jesse on 2/22/15 under the Apache 2.0 license.

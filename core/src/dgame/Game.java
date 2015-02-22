@@ -7,7 +7,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import dgame.fitbark.ApiAccess;
+import dgame.graphics.UI;
+import dgame.graphics.UIElement;
+import dgame.scenes.Lawn;
 import dgame.graphics.Renderer;
+import dgame.scenes.Shop;
 
 public class Game extends ApplicationAdapter {
 
@@ -18,14 +22,22 @@ public class Game extends ApplicationAdapter {
 
 	@Override
 	public void create () {
+        Lawn lawn = new Lawn();
+        Shop shop = new Shop();
+        GameState.lawn = lawn;
+        GameState.shop = shop;
+        GameState.ToLawn();
+
         renderSetup = new Renderer(Gdx.app.getGraphics().getWidth(), Gdx.app.getGraphics().getHeight());
         entities = new Entities();
         batch = new SpriteBatch();
+
         ui = new UI();
-        UIElement shop = new UIElement(new Texture("store-btn.png"));
-        shop.SetX(25);
-        shop.SetY(25);
-        ui.AddUIElement(shop);
+        UIElement shopBag = new UIElement(new Texture("store-btn.png"));
+        shopBag.SetX(25);
+        shopBag.SetY(25);
+        ui.AddUIElement(shopBag);
+
         ApiAccess apiAccess = new ApiAccess();
 	}
 
@@ -33,9 +45,13 @@ public class Game extends ApplicationAdapter {
 	public void render () {
         Gdx.gl.glClearColor(0.48f, 0.78f, 0.34f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+        if(GameState.isChanged)
+            renderSetup.scene = GameState.current;
+
         batch.begin();
         batch.enableBlending();
-        renderSetup.DrawLawn(batch);
+        renderSetup.Draw(batch);
         entities.Draw(batch);
         ui.Draw(batch);
         batch.end();
